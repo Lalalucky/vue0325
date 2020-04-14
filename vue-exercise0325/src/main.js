@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import './registerServiceWorker';
 
-import '@/scss/index.scss' ;
+import '@/scss/index.scss';
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -13,9 +13,11 @@ Vue.use(ElementUI, {
 });
 
 import router from './router/index.js';
-import store from './store';
-
+import store from './store/index.js';
+console.log(store);
 Vue.config.productionTip = false;
+
+require('./mock/index.js');
 
 new Vue({
 	router,

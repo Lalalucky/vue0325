@@ -1,0 +1,44 @@
+{
+  "id": "1755130",
+  "name": "vue0325",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "206443",
+      "name": "news",
+      "font_class": "news",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "1053877",
+      "name": "menu off",
+      "font_class": "menuoff",
+      "unicode": "e77c",
+      "unicode_decimal": 59260
+    },
+    {
+      "icon_id": "1053878",
+      "name": "menu on",
+      "font_class": "menuon",
+      "unicode": "e77d",
+      "unicode_decimal": 59261
+    },
+    {
+      "icon_id": "4427410",
+      "name": "生活",
+      "font_class": "tubiaozhizuomobanyihuifu-",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "10563001",
+      "name": "Paint roller",
+      "font_class": "Paintroller",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    }
+  ]
+}

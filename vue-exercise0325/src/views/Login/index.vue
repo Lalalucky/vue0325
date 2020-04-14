@@ -24,14 +24,18 @@ export default {
 	data() {
 		var validatorPwd = (rule, value, callback) => {
 			if (value === '' || value === null || value === undefined) {
-				return callback(new Error('请输入密码'));
+				callback(new Error('请输入密码'));
 			} else if (value.length < 6 || value.length > 20) {
-				return callback(new Error('请输入6到12位的密码'));
+				callback(new Error('请输入6到12位的密码'));
+			}else{
+				callback()
 			}
 		};
 		var validatorAccount = (rule, value, callback) => {
 			if (value === '' || value === null || value === undefined) {
-				return callback(new Error('请输入账号'));
+				callback(new Error('请输入账号'));
+			}else{
+				callback()
 			}
 		};
 		return {
@@ -41,8 +45,8 @@ export default {
 			},
 			loading: null,
 			rules: {
-				account: [{ require: true }, { validator: validatorAccount, trigger: 'blur' }],
-				pwd: [{ require: true }, { validator: validatorPwd, trigger: 'blur' }]
+				account: [{ required: true ,message:'账户名必填'}, { validator: validatorAccount, trigger: 'blur' }],
+				pwd: [{ required: true ,message:'密码必填'}, { validator: validatorPwd, trigger: 'blur' }]
 			}
 		};
 	},
@@ -53,7 +57,7 @@ export default {
 			this.$refs[formname].resetFields();
 		},
 		submitUserForm(formname) {
-			const submitFn = () => {
+			const submitFn = _ => {
 				this.loading = this.$loading({
 					lock: true,
 					text: '登录中……',
@@ -61,13 +65,18 @@ export default {
 					background: 'rgba(0, 0, 0, 0.7)'
 				});
 				setTimeout(() => {
-					console.log('提交成功');
-					this.loading = null;
+					this.loading.close();
+					// alert('提交成功');
+					this.$router.push({
+						path: '/news'
+					});
 				}, 200);
 			};
 			this.$refs[formname].validate(valida => {
 				if (valida) {
 					submitFn();
+				} else {
+					this.$message.error('提交失败');
 				}
 			});
 		}
