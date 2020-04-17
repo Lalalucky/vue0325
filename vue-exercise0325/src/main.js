@@ -17,7 +17,7 @@ import store from './store/index.js';
 console.log(store);
 Vue.config.productionTip = false;
 
-require('./mock/index.js');
+import './mock/index.js' ;
 
 new Vue({
 	router,

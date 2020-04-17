@@ -1,6 +1,6 @@
 <template>
 	<aside class="left-group">
-		{{ showAllMenu }}
+		<!-- {{ showAllMenu }} -->
 		<div class="is-show-whole-column"></div>
 		<div class="column-list"></div>
 	</aside>
@@ -14,9 +14,12 @@ export default {
 		return {};
 	},
 	computed: {
-		...mapGetters({
-			showAllMenu: 'g_showAllMenu'
-		})
+		// ...mapGetters({
+		// 	showAllMenu: 'g_showAllMenu'
+		// })
+		...mapGetters([
+			'base/g_showAllMenu'
+		])
 	},
 	components: {},
 	mounted() {

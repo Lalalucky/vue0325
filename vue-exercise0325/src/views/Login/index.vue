@@ -65,6 +65,7 @@ export default {
 					background: 'rgba(0, 0, 0, 0.7)'
 				});
 				setTimeout(() => {
+					this.$store.dispatch("user/setUserInfo",{userName:this.userForm.account}) ;
 					this.loading.close();
 					// alert('提交成功');
 					this.$router.push({

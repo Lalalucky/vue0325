@@ -4,9 +4,10 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import base from './modules/base.js';
-console.log(base);
+import user from './modules/user.js';
 export default new Vuex.Store({
 	modules: {
-		base
+		base,
+		user
 	}
 });
