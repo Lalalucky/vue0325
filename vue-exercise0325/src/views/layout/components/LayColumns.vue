@@ -23,7 +23,7 @@ export default {
 	},
 	components: {},
 	mounted() {
-		this.$store.dispatch('fnShowAllMenu',false)
+		this.$store.dispatch('base/fnShowAllMenu',false)
 	},
 	methods: {}
 };

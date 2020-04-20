@@ -1,5 +1,6 @@
 
 export default {
+	namespaced: true,
 	state: {
 		// 默认展示目录
 		showAllMenu: true
@@ -17,7 +18,7 @@ export default {
 	actions: {
 		fnShowAllMenu({ commit, dispatch, state }, key) {
 			return new Promise(async resolve => {
-        await commit('s_showAllMenu', key, { root: true });
+        await commit('base/s_showAllMenu', key, { root: true });
         resolve();
 			});
 		}

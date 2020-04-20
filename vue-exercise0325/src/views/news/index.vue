@@ -17,9 +17,9 @@ export default {
     return {};
   },
   computed:{
-    ...mapGetters([
-      'g_showUserName'
-    ])
+    ...mapGetters({
+      g_showUserName:'user/g_showUserName'
+    })
   },
   components: {},
   mounted() {

@@ -1,4 +1,5 @@
 import { resolve } from 'url';
+import config from '@/common/config.js';
 
 //  基础路由
 export let baseRoutesConfig = [
@@ -31,6 +32,7 @@ export const routerBase = process.env.LOCATION_FORST || '';
 
 export const isPermissionCheck = () => {
 	let processEnv = process.env.NODE_ENV;
-	if (processEnv !== 'development') return false;
+	let isPermissionCheck = config.menu.isAuthentication;
+	if (processEnv === 'development' && !isPermissionCheck) return false;
 	return true;
 };
